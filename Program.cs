@@ -41,27 +41,36 @@ foreach(var letter in randLetters){
 //counters for the number of letters in the correct position and the number of letters correct but in the wrong spot
 int lettersCorrectPosition = 0;
 int lettersIncorrectPosition = 0;
+//boolean to loop program if an invalid answer is given
+bool redoAnswer = true;
 Console.WriteLine("");
 Console.WriteLine("Please guess a sequence of 4 lowercase letters with no spaces.");
-string usersAnswer = Console.ReadLine();
-if(usersAnswer.Length == 4)
-{
-    for(int i = 0; i < 4; i++)
+while(redoAnswer){
+    redoAnswer = false;
+    string usersAnswer = Console.ReadLine();
+    //test to make sure user gives valid answer
+    if(usersAnswer.Length == 4)
     {
-        foreach(char letter in randLetters)
+        //iterates through each letter of the users answer and letter in the list
+        for(int i = 0; i < 4; i++)
         {
-            if(usersAnswer[i].Equals(randLetters[i]))
+            foreach(char letter in randLetters)
             {
-                lettersCorrectPosition++;
-            }
-            else if(usersAnswer[i].Equals(letter)){
-                lettersIncorrectPosition++;
+                if(usersAnswer[i].Equals(randLetters[i]))
+                {
+                    lettersCorrectPosition++;
+                }
+                else if(usersAnswer[i].Equals(letter)){
+                    lettersIncorrectPosition++;
+                }
             }
         }
+        //since userAnswer is a string each letter takes up the space of 4 char, so we must divide by 4 to get correct number
+        Console.WriteLine($"{lettersCorrectPosition/4} letters in the correct position");
+        Console.WriteLine($"{lettersIncorrectPosition} letters in the incorrect position");
     }
-    Console.WriteLine($"{lettersCorrectPosition/4} letters in the correct position");
-    Console.WriteLine($"{lettersIncorrectPosition} letters in the incorrect position");
-}
-else{
-    Console.WriteLine("Invalid Answer Please guess again");
+    else{
+        Console.WriteLine("Invalid Answer Please guess again");
+        redoAnswer = true;
+    }
 }
