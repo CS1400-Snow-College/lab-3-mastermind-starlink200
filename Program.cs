@@ -7,8 +7,6 @@
 /*******************************************************************
 *Things left to do in program:
 *
-*If there are repeat letters in an answer make answer invalid
-*or don't count the repeat letter twice
 *
 ********************************************************************/
 Console.Clear();
@@ -52,9 +50,6 @@ while(playAgain)
     foreach(var letter in randLetters){
         Console.Write(letter);
     }
-    //counters for the number of letters in the correct position and the number of letters correct but in the wrong spot
-    int lettersCorrectPosition = 0;
-    int lettersIncorrectPosition = 0;
     //counter for number of guesses
     int guessCounter = 1;
     //boolean to loop program if an invalid answer is given and if user doesn't get correct answer
@@ -68,6 +63,8 @@ while(playAgain)
         Console.Write($"Guess #{guessCounter}: ");
         Console.WriteLine("Please guess a sequence of 4 lowercase letters with no spaces and no repeats.");
         string usersAnswer = Console.ReadLine();
+        int lettersCorrectPosition = 0;
+        int lettersIncorrectPosition = 0;
         //if user types stop program will not loop again
         if(usersAnswer.ToLower().Equals("stop"))
         {
@@ -89,6 +86,9 @@ while(playAgain)
 
                 //increment guess counter only if user gives valid answer
                 guessCounter++;
+                //counters for the number of letters in the correct position and the number of letters correct but in the wrong spot
+                lettersCorrectPosition = 0;
+                lettersIncorrectPosition = 0;
                 //iterates through each letter of the users answer and letter in the list
                 for(int i = 0; i < 4; i++)
                 {
