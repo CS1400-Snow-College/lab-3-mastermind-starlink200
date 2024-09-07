@@ -29,19 +29,19 @@ while(playAgain)
     int numOfLetters = Convert.ToInt32(howManyLetters);
     //create a list to store the randomly selected characters
     //give the list a dummy value that won't be selected by the random generator
-    List<char> randLetters = new List<char>{'k'};
+    List<char> randLetters = new List<char>{'{'};
     //a for loop that runs 4 times to get 4 numbers and convert them to a char then add them to the list
     for(int i = 0; i < numOfLetters; i++)
     {
         //temp will randomly select a letter a through g
         //new letter each iteration of the for loop
-        char temp = (char) rand.Next(97,124);
+        char temp = (char) rand.Next(97,123);
         //if statement to check if the letter in temp is already contained in the list
         if(!randLetters.Contains(temp))
         {
             randLetters.Add(temp);
             //remove all the dummy values in the list
-            randLetters.Remove('k');
+            randLetters.Remove('{');
         }
         else{
             //if the loop doesn't add a letter that iteration, i must be decremented so that 4 letters will still be added
