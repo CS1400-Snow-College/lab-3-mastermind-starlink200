@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lab-3-mastermind-starlink200")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ea70bf8731850ed8e0a18b5c1a69e787629fb50")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8dbac241514dc63ff478925e05dd21dc7ad8171")]
 [assembly: System.Reflection.AssemblyProductAttribute("lab-3-mastermind-starlink200")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lab-3-mastermind-starlink200")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

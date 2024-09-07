@@ -9,6 +9,8 @@
 *
 *
 ********************************************************************/
+using System.Reflection.PortableExecutable;
+
 Console.Clear();
 Console.WriteLine("Hello! This is a guessing game similar to wordle, except it won't be real word" +
 " instead a chosen number of letters between 'a' and 'z' will be chosen at random, after you guess you will be told how many letters a" +
@@ -24,9 +26,9 @@ while(playAgain)
     playAgain = false;
     Console.WriteLine("Please enter how many letters you would like to be in the secret sequence. Maximum of 26");
     string howManyLetters = Console.ReadLine();
-    int numOfLetters = Convert.ToInt16(howManyLetters);
-    //create a list to store the 4 randomly selected characters
-    //give the list 4 values that won't be selected by the random generator
+    int numOfLetters = Convert.ToInt32(howManyLetters);
+    //create a list to store the randomly selected characters
+    //give the list a dummy value that won't be selected by the random generator
     List<char> randLetters = new List<char>{'k'};
     //a for loop that runs 4 times to get 4 numbers and convert them to a char then add them to the list
     for(int i = 0; i < numOfLetters; i++)
@@ -72,8 +74,8 @@ while(playAgain)
         }
         else{
             //iterate through the users answer making sure that when i != j the 2 seperate letters aren't the same
-            for(int i = 0; i < numOfLetters - 1; i++){
-                for(int j = 0; j < numOfLetters - 1; j++){
+            for(int i = 0; i < numOfLetters; i++){
+                for(int j = 0; j < numOfLetters; j++){
                     if(usersAnswer[i].Equals(usersAnswer[j]) && j != i)
                     {
                         noRepeats = false;
@@ -90,23 +92,25 @@ while(playAgain)
                 lettersCorrectPosition = 0;
                 lettersIncorrectPosition = 0;
                 //iterates through each letter of the users answer and letter in the list
-                for(int i = 0; i < numOfLetters - 1; i++)
+                for(int i = 0; i < numOfLetters; i++)
                 {
-                    foreach(char letter in randLetters)
+                    char usersAnswerCharacter = Convert.ToChar(usersAnswer[i]);
+                    if(usersAnswerCharacter.Equals(randLetters[i]))
                     {
-                        if(usersAnswer[i].Equals(randLetters[i]))
+                        lettersCorrectPosition++;
+                    }
+                    else{
+                        foreach(char letter in randLetters)
                         {
-                            lettersCorrectPosition++;
-                        }
-                        else if(usersAnswer[i].Equals(letter)){
-                            lettersIncorrectPosition++;
+                            if(usersAnswer[i].Equals(letter)){
+                                lettersIncorrectPosition++;
+                            }
                         }
                     }
                 }
-                //since userAnswer is a string each letter takes up the space of 4 char, so we must divide by 4 to get correct number
-                Console.WriteLine($"{lettersCorrectPosition/4} letters in the correct position");
+                Console.WriteLine($"{lettersCorrectPosition} letters in the correct position");
                 Console.WriteLine($"{lettersIncorrectPosition} letters in the incorrect position");
-                if(lettersCorrectPosition/4 == numOfLetters)
+                if(lettersCorrectPosition == numOfLetters)
                 {
                     Console.WriteLine($"You guessed it in {guessCounter - 1} tries! The letters were {usersAnswer}!");
                 }
