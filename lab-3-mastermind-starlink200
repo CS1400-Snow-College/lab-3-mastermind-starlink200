@@ -1,0 +1,65 @@
+[33mcommit 55c1d9d47fc7898fe74d518d81bf84f39e2fe3de[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Caleb Roskelley <caleb.roskelley@students.snow.edu>
+Date:   Sat Sep 7 00:56:50 2024 -0600
+
+    pick any size of sequence fixed and working
+
+[33mcommit 8f8bc383c3bd5dcbbf068626e714d1adc10f5966[m
+Author: Caleb Roskelley <caleb.roskelley@students.snow.edu>
+Date:   Sat Sep 7 00:43:14 2024 -0600
+
+    fixed position counter again
+
+[33mcommit f8dbac241514dc63ff478925e05dd21dc7ad8171[m
+Author: Caleb Roskelley <caleb.roskelley@students.snow.edu>
+Date:   Fri Sep 6 13:37:03 2024 -0600
+
+    finished most everything, issues with position counter
+
+[33mcommit 2ea70bf8731850ed8e0a18b5c1a69e787629fb50[m
+Author: Caleb Roskelley <caleb.roskelley@students.snow.edu>
+Date:   Fri Sep 6 12:20:35 2024 -0600
+
+    fixed correct position and incorrect position counters
+
+[33mcommit 41426628017f13a4f7effba35a1538bc8689a8c3[m
+Author: Caleb Roskelley <caleb.roskelley@students.snow.edu>
+Date:   Fri Sep 6 12:11:30 2024 -0600
+
+    when there are repeat letters, the player is given err msg
+
+[33mcommit c2e2ad8f64c922bd46718b19acb299b5440e024a[m
+Author: Caleb Roskelley <caleb.roskelley@students.snow.edu>
+Date:   Fri Sep 6 11:05:02 2024 -0600
+
+    created a stop function
+
+[33mcommit c2ddc1dbb7e8daf7f2fb0d29828bd57ebee6a3c9[m
+Author: Caleb Roskelley <caleb.roskelley@students.snow.edu>
+Date:   Fri Sep 6 10:45:22 2024 -0600
+
+    program loops if invalid answer is given
+
+[33mcommit d2252bf359afafa83fcbf3f82ac885320a7ac9b3[m
+Author: Caleb Roskelley <caleb.roskelley@students.snow.edu>
+Date:   Fri Sep 6 10:36:15 2024 -0600
+
+    program will now select 4 unique letters no repeats
+
+[33mcommit 5e7e9f2c46ea3006886dbe5d668c7c88eebcd81b[m
+Author: Caleb Roskelley <caleb.roskelley@students.snow.edu>
+Date:   Wed Sep 4 22:47:34 2024 -0600
+
+    program succesfully chooses 4 random letters
+
+[33mcommit 97fe7259eab4c355b74ebd8b4093fd7c9861bcc6[m
+Author: Caleb Roskelley <caleb.roskelley@students.snow.edu>
+Date:   Wed Sep 4 22:33:42 2024 -0600
+
+    made new console
+
+[33mcommit b0d9c18d4932918fb1138a246d732f888a9d06c9[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+Date:   Wed Aug 28 20:04:15 2024 +0000
+
+    Initial commit

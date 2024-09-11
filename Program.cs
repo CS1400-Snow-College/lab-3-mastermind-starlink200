@@ -10,7 +10,6 @@
 *
 ********************************************************************/
 using System.Reflection.PortableExecutable;
-
 Console.Clear();
 Console.WriteLine("Hello! This is a guessing game similar to wordle, except it won't be real word" +
 " instead a chosen number of letters between 'a' and 'z' will be chosen at random, after you guess you will be told how many letters a" +
@@ -47,10 +46,6 @@ while(playAgain)
             //if the loop doesn't add a letter that iteration, i must be decremented so that 4 letters will still be added
             i--;
         }
-    }
-    foreach(var letter in randLetters)
-    {
-        Console.Write(letter);
     }
     //counter for number of guesses
     int guessCounter = 1;
