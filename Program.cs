@@ -29,13 +29,10 @@ while(playAgain)
     //create a list to store the randomly selected characters
     //give the list a dummy value that won't be selected by the random generator
     List<char> randLetters = new List<char>{'{'};
-    //a for loop that runs 4 times to get 4 numbers and convert them to a char then add them to the list
     for(int i = 0; i < numOfLetters; i++)
     {
         //temp will randomly select a letter a through g
-        //new letter each iteration of the for loop
         char temp = (char) rand.Next(97,123);
-        //if statement to check if the letter in temp is already contained in the list
         if(!randLetters.Contains(temp))
         {
             randLetters.Add(temp);
@@ -47,7 +44,6 @@ while(playAgain)
             i--;
         }
     }
-    //counter for number of guesses
     int guessCounter = 1;
     //boolean to loop program if an invalid answer is given and if user doesn't get correct answer
     bool redoAnswer = true;
@@ -69,8 +65,8 @@ while(playAgain)
         }
         else{
             //iterate through the users answer making sure that when i != j the 2 seperate letters aren't the same
-            for(int i = 0; i < numOfLetters; i++){
-                for(int j = 0; j < numOfLetters; j++){
+            for(int i = 0; i < numOfLetters-1; i++){
+                for(int j = 0; j < numOfLetters-1; j++){
                     if(usersAnswer[i].Equals(usersAnswer[j]) && j != i)
                     {
                         noRepeats = false;
